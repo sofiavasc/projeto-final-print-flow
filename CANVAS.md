@@ -24,7 +24,7 @@ Pitch em uma frase:
 
 ## 😖 Bloco 2 — Problema
 
-Qual dor real vocês estão resolvendo? Descrevam uma situação concreta que alguém vive hoje.
+**Qual dor real vocês estão resolvendo? Descrevam uma situação concreta que alguém vive hoje.**
 Clientes de gráficas muitas vezes precisam solicitar um orçamento para saber quanto irão gastar com impressões. O valor pode mudar de acordo com a quantidade, tamanho do papel, tipo de impressão e acabamento, tornando o processo demorado.
 
 **Como esse problema é resolvido hoje (sem o app)?**
