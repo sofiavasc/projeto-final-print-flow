@@ -45,8 +45,13 @@ Para quem é o app? Sejam específicos (idade, contexto, com que frequência usa
 Descreva o que a **tela principal** mostra e o que o usuário consegue fazer nela.
 
 - **A tela principal lista:**
-- **A ação principal do usuário é:**
-- **Depois de agir, o usuário vê:**
+   ° Serviços disponíveis;
+   ° tipo de impressão;
+   ° tamanho do papel;
+   ° quantidade;
+   ° valor estimado.
+- **A ação principal do usuário é:** Selecionar o serviço e informar as características da impressão para calcular o orçamento.
+- **Depois de agir, o usuário vê:** O valor estimado e um resumo do orçamento realizado.
 
 ---
 
