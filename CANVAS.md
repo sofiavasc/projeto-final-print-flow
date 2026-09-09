@@ -7,7 +7,7 @@
 | | |
 |---|---|
 | **Grupo nº** | |
-| **Integrantes (3 a 4)** | Ana Elisa, Larissa Nikolly e Sofia Vitória|
+| **Integrantes (3 a 4)** | Ana Elisa, Larissa Nikolly, Sofia Vitória, Bianca Sofia|
 | **Turma** | 3º ano — Ensino Médio |
 | **Repositório** | `(https://github.com/sofiavasc/projeto-final-print-flow/tree/main)` |
 | **Data de preenchimento** | _09__/_09__/2026 |
