@@ -7,7 +7,7 @@
 | | |
 |---|---|
 | **Grupo nº** | |
-| **Integrantes (3 a 4)** | Ana Elisa, Larissa Nikolly, Sofia Vitória, Bianca Sofia|
+| **Integrantes (3 a 4)** | Ana Elisa, Bianca Sofia, Larissa Nikolly e Sofia Vitória.|
 | **Turma** | 3º ano — Ensino Médio |
 | **Repositório** | `(https://github.com/sofiavasc/projeto-final-print-flow/tree/main)` |
 | **Data de preenchimento** | _09__/_09__/2026 |
@@ -61,10 +61,10 @@ Máximo de **4 funcionalidades**. Se tiver mais, corte. Lembre: *qualidade acima
 
 | # | Funcionalidade | Essencial? | Quem faz |
 |---|---|---|---|
-| F1 | | Sim | |
-| F2 | | Sim | |
-| F3 | | Sim/Não | |
-| F4 | | Não | |
+| F1 | | Selecionar o serviço de impressão | Ana Elisa |
+| F2 | | Calcular o orçamento | Larissa |
+| F3 | | Consultar CEP usando uma API | Sofia |
+| F4 | | Salvar os últimos orçamentos | Bianca |
 
 ---
 
