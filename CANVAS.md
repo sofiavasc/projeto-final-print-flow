@@ -61,10 +61,10 @@ Máximo de **4 funcionalidades**. Se tiver mais, corte. Lembre: *qualidade acima
 
 | # | Funcionalidade | Essencial? | Quem faz |
 |---|---|---|---|
-| F1 | | Selecionar o serviço de impressão | Ana Elisa |
-| F2 | | Calcular o orçamento | Larissa |
-| F3 | | Consultar CEP usando uma API | Sofia |
-| F4 | | Salvar os últimos orçamentos | Bianca |
+| F1 | Selecionar o serviço de impressão | Sim | Ana Elisa |
+| F2 | Calcular o orçamento | Sim | Larissa |
+| F3 | Consultar CEP usando uma API | Sim | Sofia |
+| F4 | Salvar os últimos orçamentos | Não | Bianca |
 
 ---
 
