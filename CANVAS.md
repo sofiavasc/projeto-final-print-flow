@@ -72,9 +72,10 @@ Máximo de **4 funcionalidades**. Se tiver mais, corte. Lembre: *qualidade acima
 
 O que o app **não** vai fazer nesta entrega. Escrever isso aqui protege vocês de perder o prazo.
 
-- ❌
-- ❌
-- ❌
+- ❌Nesta primeira versão, o aplicativo não terá pagamento pelo aplicativo.
+- ❌Não terá chat com funcionários da gráfica.
+- ❌Não terá sistema de entrega ou rastreamento de pedidos.
+  Essas funções poderão ser adicionadas em versões futuras.
 
 *Sugestões comuns de coisas a deixar de fora: login/cadastro, notificações push, chat, mapa, pagamento, modo offline completo, sincronização em nuvem.*
 
@@ -86,7 +87,7 @@ Marque **uma** opção (as três valem a mesma nota):
 
 - [ ] **Opção A — Room:** dados salvos no próprio celular (lista de compras, agenda, diário de treino, controle financeiro)
 - [ ] **Opção B — Retrofit:** dados vindos de uma API pública (notícias, filmes, feed, clima)
-- [ ] **Opção C — Desafio:** API + salvar favoritos localmente
+- [X] **Opção C — Desafio:** API + salvar favoritos localmente
 
 **Se escolheu B ou C — qual API?** _(link da documentação + precisa de chave? é gratuita?)_
 
