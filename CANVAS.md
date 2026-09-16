@@ -119,7 +119,7 @@ Marque **uma** opção (as três valem a mesma nota):
 | Ana Elisa | Dev / telas | desenvolvimento das telas e navegação. |
 | Larissa Nikolly | Dev / dados (Room ou Retrofit) |  integração com API e cálculo dos orçamentos. |
 | Sofia Vitória | Design e identidade visual | identidade visual e documentação. |
-| Bianca | Documentação, build e entrega | testes, validação, identificação de erros e preparação da entrega |
+| Bianca | Documentação, build e entrega | testes, validação, identificação de erros e preparação da entrega. |
 
 > Todos programam. O "papel" define quem **responde** por aquela parte, não quem trabalha sozinho.
 
@@ -127,8 +127,10 @@ Marque **uma** opção (as três valem a mesma nota):
 
 | Risco | Plano B |
 |---|---|
-| | |
-| | |
+| API do ViaCEP não responder | Exibir uma mensagem de erro e permitir continuar com os dados já disponíveis |
+| Erros no cálculo do orçamento | Conferir os valores e utilizar uma tabela fixa de preços definida pelo grupo |
+| Problemas na geração do APK | Revisar o projeto e gerar uma nova versão para testes |
+| Falta de tempo para a entrega | Priorizar as funcionalidades essenciais do MVP |
 
 ---
 
