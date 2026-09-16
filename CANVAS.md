@@ -162,7 +162,7 @@ A implementação pode ser feita com o **Gemini no Android Studio**. Vocês orie
 | Marco | Prazo | Como se comprova no GitHub |
 |---|---|---|
 | M1 — Canvas preenchido + repositório criado | 16/09 | `CANVAS.md` no `main` |
-| M2 — PRD aprovado + telas rascunhadas | 30/09 | `PRD.md` + imagens em `docs/` |
+| M2 — PRD aprovado + telas rascunhadas | 23/09 | `PRD.md` + imagens em `docs/` |
 | M3 — Funcionalidade base rodando | 21/10 | tela principal lista dados + 1 ação + `try/catch` |
 | M4 — Dados completos (Room/Retrofit) e erros tratados | 11/11 | commits da camada de dados |
 | M5 — Identidade visual + `.apk` de release testado | 25/11 | ícone, cores, `.apk` testado por 2 pessoas de fora |
