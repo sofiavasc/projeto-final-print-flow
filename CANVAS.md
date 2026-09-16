@@ -152,7 +152,7 @@ A implementação pode ser feita com o **Gemini no Android Studio**. Vocês orie
 - [x] Nenhuma chave de API ou senha vai para o prompt.
 - Outro combinado nosso:quem implementar uma funcionalidade deverá apresentá-la aos outros integrantes.
 
-**Como vamos garantir que todos entendem tudo** _(ex.: quem implementa apresenta o arquivo aos outros; revezar as partes; revisar o pull request do colega)_:
+**Como vamos garantir que todos entendem tudo**:
 -Quem implementar uma funcionalidade apresentará o código aos demais integrantes, explicando como ele funciona, e o grupo revisará as alterações antes do próximo marco.
 
 ---
