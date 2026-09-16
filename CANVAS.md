@@ -140,21 +140,20 @@ A implementação pode ser feita com o **Gemini no Android Studio**. Vocês orie
 
 **Três regras que vamos escrever no nosso `AGENTS.md`** _(o arquivo que diz à IA como trabalhar no nosso projeto)_:
 
-1.
-2.
-3.
+1.Todo código gerado pela IA deve ser revisado antes de ser aceito.
+2.Cada integrante deve entender e conseguir explicar o código implementado.
+3.Alterações importantes devem ser revisadas pelo grupo antes do merge.
 
 **Combinados do grupo:**
 
-- [ ] Ninguém clica *Accept* no Agent Mode sem ler a mudança inteira.
-- [ ] Quem aceitou o código escreve o comentário de fronteira do arquivo.
-- [ ] Antes de cada marco, revisamos juntos: alguém aqui não entende alguma parte?
-- [ ] Nenhuma chave de API ou senha vai para o prompt.
-- Outro combinado nosso:
+- [x] Ninguém clica *Accept* no Agent Mode sem ler a mudança inteira.
+- [x] Quem aceitou o código escreve o comentário de fronteira do arquivo.
+- [x] Antes de cada marco, revisamos juntos: alguém aqui não entende alguma parte?
+- [x] Nenhuma chave de API ou senha vai para o prompt.
+- Outro combinado nosso:quem implementar uma funcionalidade deverá apresentá-la aos outros integrantes.
 
 **Como vamos garantir que todos entendem tudo** _(ex.: quem implementa apresenta o arquivo aos outros; revezar as partes; revisar o pull request do colega)_:
-
--
+-Quem implementar uma funcionalidade apresentará o código aos demais integrantes, explicando como ele funciona, e o grupo revisará as alterações antes do próximo marco.
 
 ---
 
