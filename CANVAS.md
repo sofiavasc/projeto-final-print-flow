@@ -75,7 +75,7 @@ O que o app **não** vai fazer nesta entrega. Escrever isso aqui protege vocês 
 - ❌Nesta primeira versão, o aplicativo não terá pagamento pelo aplicativo.
 - ❌Não terá chat com funcionários da gráfica.
 - ❌Não terá sistema de entrega ou rastreamento de pedidos.
-  Essas funções poderão ser adicionadas em versões futuras.
+
 
 *Sugestões comuns de coisas a deixar de fora: login/cadastro, notificações push, chat, mapa, pagamento, modo offline completo, sincronização em nuvem.*
 
@@ -89,14 +89,14 @@ Marque **uma** opção (as três valem a mesma nota):
 - [ ] **Opção B — Retrofit:** dados vindos de uma API pública (notícias, filmes, feed, clima)
 - [X] **Opção C — Desafio:** API + salvar favoritos localmente
 
-**Se escolheu B ou C — qual API?** _(link da documentação + precisa de chave? é gratuita?)_
+**Se escolheu B ou C — qual API?** ViaCEP, utilizada para consultar endereço pelo CEP.
 
-**Bibliotecas que o grupo vai usar:**
+**Bibliotecas que o grupo vai usar:** Retrofit, Gson, Room e Jetpack Compose.
 
-**Onde entra o `try/catch`?** _(qual operação pode falhar: banco vazio, internet caindo, API fora do ar, campo em branco)_
+**Onde entra o `try/catch`?** Na consulta do CEP pela API, pois a operação pode falhar por problemas de conexão, CEP inválido ou API indisponível.
 
-- Pode falhar:
-- O usuário vê a mensagem:
+- Pode falhar:CEP inválido, falta de internet ou API indisponível.
+- O usuário vê a mensagem: “Não foi possível consultar o endereço. Verifique o CEP e sua conexão.”
 
 ---
 
