@@ -95,7 +95,7 @@ Marque **uma** opção (as três valem a mesma nota):
 
 **Onde entra o `try/catch`?** Na consulta do CEP pela API, pois a operação pode falhar por problemas de conexão, CEP inválido ou API indisponível.
 
-- Pode falhar:CEP inválido, falta de internet ou API indisponível.
+- Pode falhar: CEP inválido, falta de internet ou API indisponível.
 - O usuário vê a mensagem: “Não foi possível consultar o endereço. Verifique o CEP e sua conexão.”
 
 ---
@@ -104,10 +104,10 @@ Marque **uma** opção (as três valem a mesma nota):
 
 | Item | Definição do grupo |
 |---|---|
-| Nome exibido (`strings.xml`) | |
-| Cor principal (hex, em `Color.kt`) | `#______` |
-| Ideia do ícone (512×512) | |
-| `applicationId` | `br.edu.ifpe.______` |
+| Nome exibido (`strings.xml`) |  OrçaPrint. |
+| Cor principal (hex, em `Color.kt`) | `#___2563EB___` |
+| Ideia do ícone (512×512) | folha de papel, impressora e símbolo de orçamento. |
+| `applicationId` | `br.edu.ifpe.orcaprint.___` |
 | Versão inicial | `1.0` (versionCode `1`) |
 
 ---
@@ -116,10 +116,10 @@ Marque **uma** opção (as três valem a mesma nota):
 
 | Integrante | Papel principal | Responsável por |
 |---|---|---|
-| | Dev / telas | |
-| | Dev / dados (Room ou Retrofit) | |
-| | Design e identidade visual | |
-| | Documentação, build e entrega | |
+| Ana Elisa | Dev / telas | desenvolvimento das telas e navegação. |
+| Larissa Nikolly | Dev / dados (Room ou Retrofit) |  integração com API e cálculo dos orçamentos. |
+| Sofia Vitória | Design e identidade visual | identidade visual e documentação. |
+| Bianca | Documentação, build e entrega | testes, validação, identificação de erros e preparação da entrega |
 
 > Todos programam. O "papel" define quem **responde** por aquela parte, não quem trabalha sozinho.
 
