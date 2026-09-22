@@ -20,18 +20,17 @@
 
 **Pitch:** O Print-Flow ajuda gráficas a realizar orçamentos, enviar propostas aos clientes pelo WhatsApp, registrar pedidos e acompanhar o status dos serviços de forma simples e organizada.
 
-**Problema:** Pequenas gráficas têm dificuldade para organizar orçamentos e pedidos dos clientes, principalmente para controlar informações como serviço, quantidade, valor e andamento do pedido. Hoje isso é feito em papel, mensagens soltas ou planilhas, e depois de calcular o orçamento o funcionário ainda precisa organizar manualmente as informações para enviar ao cliente pelo WhatsApp.
-
-**Por que vale a pena fazer isso:** O app centraliza o orçamento, o cálculo do valor, o envio da proposta e o acompanhamento do pedido em um único lugar, reduzindo erros de anotação, retrabalho manual no envio ao cliente e perda de informações sobre o andamento dos pedidos.
+**Problema:** Pequenas gráficas têm dificuldade para organizar orçamentos e pedidos dos clientes, principalmente para controlar informações como serviço, quantidade, valor e andamento do pedido. Atualmente, essas informações podem ser controladas por anotações em papel, mensagens ou planilhas, além de o envio do orçamento pelo WhatsApp precisar ser feito manualmente.
+**Por que vale a pena fazer isso:** O Print-Flow centraliza os orçamentos e pedidos em um único aplicativo, facilitando o cálculo, o registro das informações, o envio da proposta ao cliente e o acompanhamento do serviço.
 
 ---
 
 ## 2. Público e cenário de uso
 
-**Usuário-alvo:** donos e funcionários de pequenas gráficas, que usam o app durante o atendimento ao cliente para orçar, enviar propostas e acompanhar pedidos. O cliente final não instala o app — ele recebe o orçamento pronto pelo WhatsApp.
+**Usuário-alvo:** Donos e funcionários de pequenas gráficas que precisam realizar orçamentos, registrar pedidos e acompanhar serviços durante o atendimento aos clientes.
 
 **História de uso:**
-> "São 19h, a funcionária da gráfica acabou de atender um cliente que pediu 500 panfletos coloridos. Ela abre o Print-Flow, cadastra o serviço, a quantidade e as características da impressão. Em menos de 30 segundos, o app calcula o valor e abre uma conversa no WhatsApp com a proposta pronta para revisar e enviar ao cliente."
+> "Durante o atendimento, o funcionário de uma gráfica recebe um pedido de impressão. Ele abre o Print-Flow, cadastra o cliente e as informações do serviço, informa a quantidade e calcula o orçamento. Depois, revisa o valor e envia a proposta pelo WhatsApp. Quando o cliente aprova, o funcionário registra o orçamento como pedido e acompanha seu status até a finalização."
 
 ---
 
@@ -57,14 +56,11 @@
 
 | ID | História de usuário | Critério de aceite | Prioridade |
 |---|---|---|---|
-| RF01 | Como funcionário da gráfica, quero ver a lista de orçamentos e pedidos recentes para acompanhar o atendimento. | Ao abrir o app, a tela principal lista orçamentos/pedidos com cliente, serviço, valor e status; se não houver nenhum, aparece "Nenhum orçamento cadastrado ainda." | Must |
-| RF02 | Como funcionário, quero criar um orçamento informando serviço, quantidade e características da impressão, para calcular o valor automaticamente. | Ao preencher os campos e confirmar, o app calcula o valor com base na tabela de preços e exibe o orçamento calculado. | Must |
-| RF03 | Como funcionário, quero enviar o orçamento calculado ao cliente pelo WhatsApp, para agilizar a comunicação. | Ao tocar em "Enviar pelo WhatsApp" e informar o número do cliente, o app abre uma conversa no WhatsApp com mensagem pré-preenchida com os dados do orçamento. | Must |
-| RF04 | Como funcionário, quero transformar um orçamento aprovado em pedido, para iniciar o acompanhamento da produção. | Ao marcar um orçamento como aprovado, ele passa a aparecer na lista de pedidos com status inicial "Em produção". | Must |
-| RF05 | Como funcionário, quero atualizar o status de um pedido, para refletir seu andamento. | Ao abrir um pedido, é possível alterar o status entre as opções definidas (ex.: Em produção, Pronto, Entregue) e a mudança é salva. | Must |
-| RF06 | Como funcionário, quero consultar orçamentos e pedidos salvos anteriormente, para retomar o atendimento a qualquer momento. | Os dados permanecem salvos localmente (Room) mesmo após fechar e reabrir o app. | Must |
-| RF07 | Como funcionário, quero buscar/filtrar orçamentos e pedidos por cliente ou status, para encontrar informações rapidamente. | Ao digitar um nome ou escolher um status, a lista é filtrada em tempo real. | Should |
-| RF08 | Como funcionário, quero editar um orçamento antes de enviá-lo, para corrigir eventuais erros. | Ao tocar em "Editar" em um orçamento ainda não aprovado, os campos ficam editáveis e o valor é recalculado ao salvar. | Could |
+| RF01 | Como funcionário da gráfica, quero criar um orçamento para calcular o valor de um serviço de impressão. | Ao abrir o app, são exibidos os orçamentos e pedidos salvos, mostrando cliente, serviço, valor e status. Se não houver registros, aparece uma mensagem informando que não existem orçamentos ou pedidos cadastrados. | Must |
+| RF02 | Como funcionário, quero criar um orçamento informando serviço, quantidade e características da impressão, para calcular o valor automaticamente. | Ao preencher os dados obrigatórios do orçamento e confirmar, o aplicativo calcula o valor e salva o orçamento.  | Must |
+| RF03 | Como funcionário da gráfica, quero enviar o orçamento pelo WhatsApp para apresentar a proposta ao cliente. | AApós o cálculo, o aplicativo permite abrir o WhatsApp com o número informado e uma mensagem preenchida com os dados do orçamento. | Must |
+| RF04 | Como funcionário, quero transformar um orçamento aprovado em pedido, para iniciar o acompanhamento da produção. | Ao marcar um orçamento como aprovado, o aplicativo permite registrá-lo como pedido e atribuir um status inicial. | Must |
+| RF05 | Como funcionário, quero atualizar o status de um pedido, para refletir seu andamento. | O usuário consegue alterar o status do pedido e visualizar o status atualizado na lista e nos detalhes. | Must |
 
 ---
 
@@ -73,13 +69,13 @@
 | ID | Requisito | Como será verificado |
 |---|---|---|
 | RNF01 | O app não pode fechar sozinho durante o uso normal | 5 minutos de uso contínuo sem crash, em 2 celulares diferentes |
-| RNF02 | Toda operação que pode falhar está dentro de `try/catch` | Revisão do código: banco (Room), envio ao WhatsApp e entradas do usuário |
-| RNF03 | Nenhuma falha mostra tela branca ou fecha o app — sempre há mensagem ao usuário | Testes de falha da seção 9 |
-| RNF04 | O app roda a partir do Android 8.0 (API 26) — *confirmar com o grupo* | Instalação em dispositivo real |
+| RNF02 | Operações que podem apresentar erros devem possuir tratamento de exceção. | Revisão do código nas operações de banco, rede e entradas do usuário. |
+| RNF03 | Falhas não podem fechar o aplicativo ou deixar a tela sem resposta | Testes de falha da seção 9 |
+| RNF04 | O app roda a partir do Android definido no projeto | Instalação em dispositivo real |
 | RNF05 | Textos visíveis ficam em `strings.xml`, não escritos direto no código | Revisão do código |
 | RNF06 | Todo arquivo do pacote do app tem comentário de fronteira escrito pelo grupo | Revisão do código |
 | RNF07 | Qualquer integrante consegue localizar e alterar qualquer parte do app | Teste de mudança ao vivo (rubrica) |
-| RNF08 | O envio ao WhatsApp funciona mesmo que o cliente não tenha o app instalado, usando só o número informado | Teste manual enviando para um número real, com e sem WhatsApp instalado |
+| RNF08 | Os dados cadastrados devem permanecer disponíveis após fechar e abrir novamente o aplicativo. | Fechar e reabrir o app e verificar os dados salvos. |
 
 ---
 
@@ -88,11 +84,18 @@
 **Mapa de navegação:**
 
 ```
-[Tela Principal — orçamentos e pedidos]
+[Tela Principal]
       │
-      ├── toca no "+"      → [Tela de Novo Orçamento]
-      ├── toca em um item  → [Tela de Detalhe / Status do pedido]
-      └── (estado vazio)   → mensagem "Nenhum orçamento cadastrado ainda."
+      ├── toca em "+" → [Novo Orçamento]
+      │                       │
+      │                       └── calcular → [Detalhes do Orçamento]
+      │                                             │
+      │                                             ├── enviar → WhatsApp
+      │                                             │
+      │                                             └── aprovado → [Pedido]
+      │
+      └── toca em um item → [Detalhes do Orçamento/Pedido]
+
 ```
 
 | Tela | O que mostra | Ações disponíveis |
@@ -103,9 +106,6 @@
 
 **Rascunhos das telas:** coloque as imagens em `docs/telas/` e liste os arquivos aqui.
 
-- `docs/telas/01-principal.png`
-- `docs/telas/02-novo-orcamento.png`
-- `docs/telas/03-detalhe-status.png`
 
 ---
 
@@ -120,12 +120,12 @@
 | `id` | Long | sim | chave primária, autogerada |
 | `nomeCliente` | String | sim | nome do cliente |
 | `telefoneCliente` | String | sim | usado para abrir o WhatsApp |
-| `servico` | String | sim | ex.: panfleto, banner, cartão |
-| `quantidade` | Int | sim | quantidade de itens |
-| `caracteristicas` | String | não | detalhes da impressão (cor, tamanho, acabamento) |
+| `servico` | String | sim | tipo de serviço |
+| `quantidade` | Int | sim | quantidade solicitada |
+| `caracteristicas` | String | não | detalhes do serviço |
 | `valor` | Double | sim | valor calculado do orçamento |
-| `status` | String | sim | Orçamento, Aprovado, Em produção, Pronto, Entregue |
-| `dataCriacao` | Long (timestamp) | sim | usada para ordenar a lista |
+| `status` | String | sim | status do pedido |
+| `dataCriacao` | String | sim | usada para ordenar a lista |
 
 **Operações necessárias:** (x) inserir (x) listar (x) atualizar ( ) excluir *(decidir se o grupo permitirá exclusão)*
 
@@ -145,7 +145,7 @@
 | Item | Escolha |
 |---|---|
 | Linguagem | Kotlin |
-| Interface | (x) Jetpack Compose ( ) XML/Views |
+| Interface | (x) Jetpack Compose |
 | Persistência | (x) Room |
 | Rede | ( ) Retrofit — reservado para uso futuro, se necessário |
 | Outras bibliotecas | Jetpack Compose, Room, Retrofit (opcional) |
