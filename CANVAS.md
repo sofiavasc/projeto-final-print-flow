@@ -122,8 +122,8 @@ Marque **uma** opção (as três valem a mesma nota):
 |---|---|---|
 | Ana Elisa | Desenvolvimento | Participar do desenvolvimento e revisão de todas as funcionalidades |
 | Larissa Nikolly | Desenvolvimento |  Participar do desenvolvimento e revisão de todas as funcionalidades |
-| Sofia Vitória | Design e identidade visual | identidade visual e documentação. |
-| Bianca | Documentação, build e entrega | testes, validação, identificação de erros e preparação da entrega. |
+| Sofia Vitória | Desenvolvimento e documentação | Participar do desenvolvimento, revisão da documentação e organização dos documentos |
+| Bianca | Desenvolvimento e identidade visual | Participar do desenvolvimento, identidade visual e revisão do design |
 
 > Todos programam. O "papel" define quem **responde** por aquela parte, não quem trabalha sozinho.
 
