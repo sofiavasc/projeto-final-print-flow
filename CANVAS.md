@@ -35,9 +35,12 @@ Atualmente, muitos orçamentos e pedidos são controlados por anotações em pap
 
 Para quem é o app? Sejam específicos (idade, contexto, com que frequência usariam).
 
-- **Perfil principal:** estudantes, professores, pequenos empreendedores e pessoas que utilizam serviços de gráficas. (14 a 60 anos)
-- **Quando/onde usam:** quando precisam descobrir rapidamente quanto custará uma impressão, seja em casa, na escola, no trabalho ou antes de ir à gráfica. 
-- **Uma pessoa real que testaria o app:** Joanna Jullyana Eronildes Barbosa (mãe de Ana Elisa)
+* Perfil principal: donos e funcionários de pequenas gráficas.
+* Quando/onde usam: durante o atendimento aos clientes, para realizar orçamentos, enviar propostas, registrar pedidos e acompanhar seus status.
+* Uma pessoa real que testaria o app: Joanna Jullyana Eronildes Barbosa (mãe de Ana Elisa).
+
+  O cliente não precisa instalar o aplicativo. O orçamento é realizado pela gráfica e enviado ao cliente pelo WhatsApp.
+
 
 ---
 
@@ -45,14 +48,13 @@ Para quem é o app? Sejam específicos (idade, contexto, com que frequência usa
 
 Descreva o que a **tela principal** mostra e o que o usuário consegue fazer nela.
 
-- **A tela principal lista:**
-   ° Serviços disponíveis;
-   ° tipo de impressão;
-   ° tamanho do papel;
-   ° quantidade;
-   ° valor estimado.
-- **A ação principal do usuário é:** Selecionar o serviço e informar as características da impressão para calcular o orçamento.
-- **Depois de agir, o usuário vê:** O valor estimado e um resumo do orçamento realizado.
+* A tela principal lista: orçamentos e pedidos recentes, com cliente, serviço, valor e status.
+* A ação principal do usuário é: cadastrar um orçamento informando o serviço, quantidade e características da impressão.
+* Depois de agir, o usuário vê: o valor calculado e pode enviar o orçamento ao cliente pelo WhatsApp.
+
+Fluxo principal:
+
+Novo orçamento → calcular valor → enviar orçamento pelo WhatsApp → cliente aprova → registrar pedido → atualizar status → pedido finalizado.
 
 ---
 
@@ -62,10 +64,10 @@ Máximo de **4 funcionalidades**. Se tiver mais, corte. Lembre: *qualidade acima
 
 | # | Funcionalidade | Essencial? | Quem faz |
 |---|---|---|---|
-| F1 | Selecionar o serviço de impressão | Sim | Ana Elisa |
-| F2 | Calcular o orçamento | Sim | Larissa |
-| F3 | Consultar CEP usando uma API | Sim | Sofia |
-| F4 | Salvar os últimos orçamentos | Não | Bianca |
+| F1 | Criar e calcular orçamentos | Sim | Todos |
+| F2 | Enviar o orçamento ao cliente pelo WhatsApp | Sim | Todos |
+| F3 | Registrar orçamento aprovado e acompanhar o status do pedido | Sim | Todos |
+| F4 | Salvar e consultar orçamentos e pedidos | Sim | Todos |
 
 ---
 
