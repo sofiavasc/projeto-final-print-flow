@@ -179,8 +179,7 @@ app/src/main/java/br/edu/ifpe/printflow/
 | Item | Definição | Onde fica |
 |---|---|---|
 | Nome do app | Print-Flow | `strings.xml` |
-| Cor principal | `#2563EB` | `Color.kt` |
-| Cor secundária | *(a definir pelo grupo)* | `Color.kt` |
+| Cor principal | `#___#007DCC____#FFB900___#D10056___#B2054C___` | `Color.kt` |
 | Ícone 512×512 | Folha de papel, impressora e símbolo de orçamento | `loja/icone-512.png` |
 | `applicationId` | `br.edu.ifpe.printflow` | `build.gradle.kts` |
 | `versionName` / `versionCode` | `1.0` / `1` | `build.gradle.kts` |
@@ -262,7 +261,12 @@ A implementação usa o **Gemini no Android Studio**. Este PRD é o documento qu
 | Identidade visual e recursos | Bianca Sofia |
 | Build e artefatos de loja | Sofia Vitória |
 
-**Decisões que o grupo tomou contra a sugestão da IA** *(preencher ao longo do projeto — isso conta a favor na avaliação)*:
+**Decisões que o grupo tomou contra a sugestão da IA** :
+
+* Manter o cliente fora do aplicativo, utilizando o WhatsApp para receber o orçamento.
+* Utilizar armazenamento local com Room para os dados do aplicativo.
+* Priorizar as quatro funcionalidades definidas no Canvas, evitando recursos fora do escopo.
+* Não incluir pagamentos, chat próprio, entrega/rastreamento ou consulta de CEP.
 
 -
 
