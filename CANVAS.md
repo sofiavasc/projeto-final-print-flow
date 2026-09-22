@@ -120,8 +120,8 @@ Marque **uma** opção (as três valem a mesma nota):
 
 | Integrante | Papel principal | Responsável por |
 |---|---|---|
-| Ana Elisa | Dev / telas | desenvolvimento das telas e navegação. |
-| Larissa Nikolly | Dev / dados (Room ou Retrofit) |  integração com API e cálculo dos orçamentos. |
+| Ana Elisa | Desenvolvimento | Participar do desenvolvimento e revisão de todas as funcionalidades |
+| Larissa Nikolly | Desenvolvimento |  Participar do desenvolvimento e revisão de todas as funcionalidades |
 | Sofia Vitória | Design e identidade visual | identidade visual e documentação. |
 | Bianca | Documentação, build e entrega | testes, validação, identificação de erros e preparação da entrega. |
 
@@ -131,22 +131,24 @@ Marque **uma** opção (as três valem a mesma nota):
 
 | Risco | Plano B |
 |---|---|
-| API do ViaCEP não responder | Exibir uma mensagem de erro e permitir continuar com os dados já disponíveis |
-| Erros no cálculo do orçamento | Conferir os valores e utilizar uma tabela fixa de preços definida pelo grupo |
-| Problemas na geração do APK | Revisar o projeto e gerar uma nova versão para testes |
-| Falta de tempo para a entrega | Priorizar as funcionalidades essenciais do MVP |
+| Erros no cálculo do orçamento | Utilizar uma tabela fixa de preços definida pelo grupo |
+| Problemas no armazenamento dos dados | Revisar a implementação do Room e testar novamente |
+| Problemas no envio pelo WhatsApp | Permitir que o orçamento seja copiado e compartilhado manualmente |
+| Erros na geração do APK | Revisar o projeto e gerar uma nova versão para testes |
+| Falta de tempo para a entrega | Priorizar as quatro funcionalidades essenciais |
 
 ---
 
 ## 🤖 Bloco 10 — Acordo de trabalho com IA
 
-A implementação pode ser feita com o **Gemini no Android Studio**. Vocês orientam, ele digita — e cada integrante precisa saber explicar o que entrou no projeto. Regras completas em [`docs/USO_DE_IA.md`](docs/USO_DE_IA.md).
+A implementação pode ser feita com o Gemini no Android Studio. Vocês orientam, ele digita — e cada integrante precisa saber explicar o que entrou no projeto. Regras completas em docs/USO_DE_IA.md⁠￼.
 
-**Três regras que vamos escrever no nosso `AGENTS.md`** _(o arquivo que diz à IA como trabalhar no nosso projeto)_:
+Três regras que vamos escrever no nosso AGENTS.md:
 
-1.Todo código gerado pela IA deve ser revisado antes de ser aceito.
-2.Cada integrante deve entender e conseguir explicar o código implementado.
-3.Alterações importantes devem ser revisadas pelo grupo antes do merge.
+1. Todo código gerado pela IA deve ser revisado antes de ser aceito.
+2. Cada integrante deve entender e conseguir explicar o código implementado.
+3. Alterações importantes devem ser revisadas pelo grupo antes do merge.
+
 
 **Combinados do grupo:**
 
@@ -157,8 +159,9 @@ A implementação pode ser feita com o **Gemini no Android Studio**. Vocês orie
 - Outro combinado nosso:quem implementar uma funcionalidade deverá apresentá-la aos outros integrantes.
 
 **Como vamos garantir que todos entendem tudo**:
--Quem implementar uma funcionalidade apresentará o código aos demais integrantes, explicando como ele funciona, e o grupo revisará as alterações antes do próximo marco.
-
+* A cada funcionalidade, as integrantes se revezarão no desenvolvimento.
+* Quem trabalhou na alteração apresentará o código às demais, explicando seu funcionamento.
+* O grupo fará uma revisão conjunta antes de seguir para a próxima etapa.
 ---
 
 ## 🗓️ Bloco 11 — Marcos até 10/12
