@@ -20,15 +20,16 @@
 **Nome do app:** PrintFlow
 
 Pitch em uma frase:
-> "O PrintFlow ajuda clientes de gráficas a calcular o preço de serviços  sem precisar ir ao estabelecimento."
+> “O Print-Flow ajuda gráficas a realizar orçamentos, enviar propostas aos clientes pelo WhatsApp, registrar pedidos e acompanhar o status dos serviços de forma simples e organizada.”
+
 
 ## 😖 Bloco 2 — Problema
 
 **Qual dor real vocês estão resolvendo? Descrevam uma situação concreta que alguém vive hoje.**
-Clientes de gráficas muitas vezes precisam solicitar um orçamento para saber quanto irão gastar com impressões. O valor pode mudar de acordo com a quantidade, tamanho do papel, tipo de impressão e acabamento, tornando o processo demorado.
+Pequenas gráficas podem ter dificuldade para organizar os orçamentos e pedidos dos clientes, principalmente quando precisam controlar informações como serviço, quantidade, valor e andamento do pedido.
 
 **Como esse problema é resolvido hoje (sem o app)?**
-Atualmente, o cliente normalmente precisa ir até a gráfica, ligar ou enviar uma mensagem para informar o que deseja imprimir e perguntar o preço. 
+Atualmente, muitos orçamentos e pedidos são controlados por anotações em papel, mensagens ou planilhas. Além disso, depois de realizar um orçamento, o funcionário precisa organizar as informações e enviá-las manualmente ao cliente pelo WhatsApp. 
 
 ## 👥 Bloco 3 — Público-alvo
 
