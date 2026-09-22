@@ -109,10 +109,7 @@ Marque **uma** opção (as três valem a mesma nota):
 | Item | Definição do grupo |
 |---|---|
 | Nome exibido (`strings.xml`) | Print-Flow |
-| Cor principal (hex, em `Color.kt`) | `#___#007DCC
-#FFB900
-#D10056
-#B2054C___` |
+| Cor principal (hex, em `Color.kt`) | `#___#007DCC____#FFB900___#D10056___#B2054C___` |
 | Ideia do ícone (512×512) | folha de papel, impressora e símbolo de orçamento. |
 | `applicationId` | `br.edu.ifpe.printflow.___` |
 | Versão inicial | `1.0` (versionCode `1`) |
