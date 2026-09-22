@@ -74,13 +74,14 @@ Máximo de **4 funcionalidades**. Se tiver mais, corte. Lembre: *qualidade acima
 ## 🚫 Bloco 6 — Fora do escopo
 
 O que o app **não** vai fazer nesta entrega. Escrever isso aqui protege vocês de perder o prazo.
+* ❌ O cliente não precisará baixar ou instalar o aplicativo.
+* ❌ O aplicativo não realizará pagamentos.
+* ❌ Não haverá chat próprio entre cliente e gráfica.
+* ❌ Não haverá entrega ou rastreamento do pedido.
+* ❌ Não haverá consulta de CEP.
 
-- ❌Nesta primeira versão, o aplicativo não terá pagamento pelo aplicativo.
-- ❌Não terá chat com funcionários da gráfica.
-- ❌Não terá sistema de entrega ou rastreamento de pedidos.
 
 
-*Sugestões comuns de coisas a deixar de fora: login/cadastro, notificações push, chat, mapa, pagamento, modo offline completo, sincronização em nuvem.*
 
 ---
 
@@ -92,14 +93,14 @@ Marque **uma** opção (as três valem a mesma nota):
 - [ ] **Opção B — Retrofit:** dados vindos de uma API pública (notícias, filmes, feed, clima)
 - [X] **Opção C — Desafio:** API + salvar favoritos localmente
 
-**Se escolheu B ou C — qual API?** ViaCEP, utilizada para consultar endereço pelo CEP.
+**Se escolheu B ou C — qual API?** WhatsApp para envio dos orçamentos e Room para armazenamento local.
 
-**Bibliotecas que o grupo vai usar:** Retrofit, Gson, Room e Jetpack Compose.
+**Bibliotecas que o grupo vai usar:**Jetpack Compose, Room e Retrofit, caso seja necessária uma integração com API externa.
 
-**Onde entra o `try/catch`?** Na consulta do CEP pela API, pois a operação pode falhar por problemas de conexão, CEP inválido ou API indisponível.
+**Onde entra o `try/catch`?** Nas operações que podem apresentar erros, como o salvamento e consulta dos dados ou uma possível integração com serviços externos.
 
-- Pode falhar: CEP inválido, falta de internet ou API indisponível.
-- O usuário vê a mensagem: “Não foi possível consultar o endereço. Verifique o CEP e sua conexão.”
+- Pode falhar: No salvamento ou consulta dos dados e na abertura do WhatsApp, caso ocorra algum erro ou o aplicativo não esteja disponível.
+- O usuário vê a mensagem: “Não foi possível realizar esta operação. Tente novamente.”
 
 ---
 
@@ -107,10 +108,13 @@ Marque **uma** opção (as três valem a mesma nota):
 
 | Item | Definição do grupo |
 |---|---|
-| Nome exibido (`strings.xml`) |  OrçaPrint. |
-| Cor principal (hex, em `Color.kt`) | `#___2563EB___` |
+| Nome exibido (`strings.xml`) | Print-Flow |
+| Cor principal (hex, em `Color.kt`) | `#___#007DCC
+#FFB900
+#D10056
+#B2054C___` |
 | Ideia do ícone (512×512) | folha de papel, impressora e símbolo de orçamento. |
-| `applicationId` | `br.edu.ifpe.orcaprint.___` |
+| `applicationId` | `br.edu.ifpe.printflow.___` |
 | Versão inicial | `1.0` (versionCode `1`) |
 
 ---
