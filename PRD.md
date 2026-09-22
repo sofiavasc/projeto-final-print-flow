@@ -8,7 +8,7 @@
 | | |
 |---|---|
 | **App** | Print-Flow |
-| **Grupo** | — *(preencher número do grupo)* |
+| **Grupo** | 4 |
 | **Autores** | Ana Elisa, Bianca Sofia, Larissa Nikolly e Sofia Vitória |
 | **Versão do documento** | 1.0 |
 | **Última atualização** | 22/09/2026 |
