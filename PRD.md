@@ -113,19 +113,14 @@
 
 ### Opção C — Room (persistência local)
 
-**Entidade principal:** `Orcamento`
+**Entidades:**
 
-| Campo | Tipo | Obrigatório | Observação |
-|---|---|---|---|
-| `id` | Long | sim | chave primária, autogerada |
-| `nomeCliente` | String | sim | nome do cliente |
-| `telefoneCliente` | String | sim | usado para abrir o WhatsApp |
-| `servico` | String | sim | tipo de serviço |
-| `quantidade` | Int | sim | quantidade solicitada |
-| `caracteristicas` | String | não | detalhes do serviço |
-| `valor` | Double | sim | valor calculado do orçamento |
-| `status` | String | sim | status do pedido |
-| `dataCriacao` | String | sim | usada para ordenar a lista |
+Entidade Cliente
+Campo |	Tipo |	Obrigatório |	Observação
+id	| Long	| sim	| chave primária, autogerada
+nome	| String	| sim	| nome do cliente
+telefone |	String	| sim	| usado para abrir o WhatsApp
+email |	String	| sim	| e-mail do cliente
 
 **Operações necessárias:** (x) inserir (x) listar (x) atualizar ( ) excluir *(decidir se o grupo permitirá exclusão)*
 
