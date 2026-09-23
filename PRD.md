@@ -58,7 +58,7 @@
 |---|---|---|---|
 | RF01 | Como funcionário da gráfica, quero criar um orçamento para calcular o valor de um serviço de impressão. | Ao abrir o app, são exibidos os orçamentos e pedidos salvos, mostrando cliente, serviço, valor e status. Se não houver registros, aparece uma mensagem informando que não existem orçamentos ou pedidos cadastrados. | Must |
 | RF02 | Como funcionário, quero criar um orçamento informando serviço, quantidade e características da impressão, para calcular o valor automaticamente. | Ao preencher os dados obrigatórios do orçamento e confirmar, o aplicativo calcula o valor e salva o orçamento.  | Must |
-| RF03 | Como funcionário da gráfica, quero enviar o orçamento pelo WhatsApp para apresentar a proposta ao cliente. | AApós o cálculo, o aplicativo permite abrir o WhatsApp com o número informado e uma mensagem preenchida com os dados do orçamento. | Must |
+| RF03 | Como funcionário da gráfica, quero enviar o orçamento pelo WhatsApp para apresentar a proposta ao cliente. | Após o cálculo, o aplicativo permite abrir o WhatsApp com o número informado e uma mensagem preenchida com os dados do orçamento. | Must |
 | RF04 | Como funcionário, quero transformar um orçamento aprovado em pedido, para iniciar o acompanhamento da produção. | Ao marcar um orçamento como aprovado, o aplicativo permite registrá-lo como pedido e atribuir um status inicial. | Must |
 | RF05 | Como funcionário, quero atualizar o status de um pedido, para refletir seu andamento. | O usuário consegue alterar o status do pedido e visualizar o status atualizado na lista e nos detalhes. | Must |
 
