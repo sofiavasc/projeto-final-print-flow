@@ -11,13 +11,3 @@ data class Cliente(
     val telefone: String,
     val email: String
 )
-
-@Entity
-data class Servico(
-    @PrimaryKey(autoGenerate = true)
-    val id: Int = 0,
-    val nome: String,           
-    val descricao: String,
-    val precoUnitario: Double,  
-    val unidade: String = "un" 
-)
