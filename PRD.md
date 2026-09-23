@@ -115,12 +115,14 @@
 
 **Entidades:**
 
-Entidade Cliente
-Campo |	Tipo |	Obrigatório |	Observação
-id	| Long	| sim	| chave primária, autogerada
-nome	| String	| sim	| nome do cliente
-telefone |	String	| sim	| usado para abrir o WhatsApp
-email |	String	| sim	| e-mail do cliente
+### Entidade Cliente
+
+| Campo | Tipo | Obrigatório | Observação |
+|---|---|---|---|
+| `id` | Long | sim | chave primária, autogerada |
+| `nome` | String | sim | nome do cliente |
+| `telefone` | String | sim | usado para abrir o WhatsApp |
+| `email` | String | sim | e-mail do cliente |
 
 **Operações necessárias:** (x) inserir (x) listar (x) atualizar ( ) excluir *(decidir se o grupo permitirá exclusão)*
 
