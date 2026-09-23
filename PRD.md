@@ -180,7 +180,7 @@ app/src/main/java/br/edu/ifpe/printflow/
 |---|---|---|
 | Nome do app | Print-Flow | `strings.xml` |
 | Cor principal | `#___#007DCC____#FFB900___#D10056___#B2054C___` | `Color.kt` |
-| Ícone 512×512 | Folha de papel, impressora e símbolo de orçamento | `loja/icone-512.png` |
+| Ícone 512×512 | impressora | `appicone.png` |
 | `applicationId` | `br.edu.ifpe.printflow` | `build.gradle.kts` |
 | `versionName` / `versionCode` | `1.0` / `1` | `build.gradle.kts` |
 
@@ -190,11 +190,11 @@ app/src/main/java/br/edu/ifpe/printflow/
 |---|---|---|
 | Título | 30 caracteres | Print-Flow |
 | Descrição curta | 80 caracteres | Orçamentos, pedidos e envio ao cliente pelo WhatsApp — tudo em um só app. |
-| Descrição completa | — | *(escrever em `loja/descricao.md`)* |
-| Imagem de destaque | 1024×500 | `loja/destaque-1024x500.png` |
-| Screenshots | mín. 2 | `loja/screenshots/` |
-| Esboço de privacidade | — | `loja/privacidade.md` — dados ficam salvos localmente no celular (Room); o telefone do cliente é usado apenas para abrir o WhatsApp e não é enviado a nenhum servidor. |
-| Arquivo `.aab` | — | `loja/app-release.aab` |
+| Descrição completa |  | O Print-Flow é um aplicativo para pequenas gráficas que facilita a criação e o gerenciamento de orçamentos e pedidos. O aplicativo permite cadastrar as informações do serviço, calcular o valor do orçamento, enviar a proposta ao cliente pelo WhatsApp e acompanhar o status do pedido até sua finalização. |
+| Imagem de destaque | 1024×500 | arte de uma impressora |
+| Screenshots | mín. 2 | Capturas da Tela Principal, Novo Orçamento e Detalhes do Orçamento/Pedido. |
+| Esboço de privacidade | — | dados ficam salvos localmente no celular (Room); o telefone do cliente é usado apenas para abrir o WhatsApp. |
+| Arquivo `.aab` | — | Arquivo final do aplicativo para publicação, gerado após os testes e a revisão da versão final. |
 
 ---
 
@@ -277,3 +277,4 @@ A implementação usa o **Gemini no Android Studio**. Este PRD é o documento qu
 | Versão | Data | Autor | O que mudou |
 |---|---|---|---|
 | 1.0 | 22/09/2026 | Grupo Print-Flow | Versão inicial, preenchida a partir do CANVAS.md |
+
