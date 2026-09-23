@@ -1,3 +1,5 @@
+package br.edu.ifpe.printflow.model
+
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
