@@ -1,3 +1,6 @@
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
 @Entity
 data class Pedido(
     @PrimaryKey(autoGenerate = true)
