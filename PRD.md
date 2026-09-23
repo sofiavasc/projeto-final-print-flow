@@ -272,4 +272,5 @@ A implementação usa o **Gemini no Android Studio**. Este PRD é o documento qu
 | Versão | Data | Autor | O que mudou |
 |---|---|---|---|
 | 1.0 | 22/09/2026 | Grupo Print-Flow | Versão inicial, preenchida a partir do CANVAS.md |
+| 1.1 | 22/09/2026 | Sofia Vitória | Mudança da identidade visual (tópico 10) |
 
