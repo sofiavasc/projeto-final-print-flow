@@ -124,7 +124,34 @@
 | `telefone` | String | sim | usado para abrir o WhatsApp |
 | `email` | String | sim | e-mail do cliente |
 
-**Operações necessárias:** (x) inserir (x) listar (x) atualizar ( ) excluir *(decidir se o grupo permitirá exclusão)*
+### Entidade Serviço
+
+| Campo | Tipo | Obrigatório | Observação |
+|---|---|---|---|
+| `id` | Long | sim | chave primária, autogerada |
+| `nome` | String | sim | nome do serviço |
+| `descricao` | String | sim | descrição do serviço |
+| `preco` | Double | sim | preço do serviço |
+
+### Entidade Serviço
+
+| Campo | Tipo | Obrigatório | Observação |
+|---|---|---|---|
+| `id` | Long | sim | chave primária, autogerada |
+| `nome` | String | sim | nome do serviço |
+| `descricao` | String | sim | descrição do serviço |
+| `preco` | Double | sim | preço do serviço |
+
+### Entidade Pedido
+
+| Campo | Tipo | Obrigatório | Observação |
+|---|---|---|---|
+| `id` | Long | sim | chave primária, autogerada |
+| `orcamento` | Long | sim | referência ao orçamento |
+| `data` | String | sim | data do pedido |
+| `status` | String | sim | status do pedido |
+
+**Operações necessárias:** (x) inserir (x) listar (x) atualizar (x) excluir
 
 ### Opção C — WhatsApp (integração via Intent, não é uma API REST)
 
