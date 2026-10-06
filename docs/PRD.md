@@ -158,6 +158,17 @@
 
 **Operações necessárias:** (x) inserir (x) listar (x) atualizar (x) excluir
 
+### Entidade Login
+
+| Campo | Tipo | Obrigatório | Observação |
+|---|---|---|---|
+| `id` | Long | sim | chave primária, autogerada |
+| `usuario` | String | sim | nome do usuário |
+| `email` | String | sim | e-mail usado para login |
+| `senha` | String | sim | senha do usuário |
+
+**Operações necessárias:** (x) inserir (x) listar (x) atualizar (x) excluir
+
 ### Opção C — WhatsApp (integração via Intent, não é uma API REST)
 
 | Item | Definição |
