@@ -20,9 +20,10 @@
 ## Entidades do Banco
 
 * **Cliente**: `id`, `nome`, `telefone` e `email`.
-* **Serviço**: `id`, `nome`, `descricao` e `preco`.
+* **Serviço**: `id`, `nome`, `descricao`, `precoUnitario` e `unidade`.
 * **Pedido**: `id`, `orcamento`, `data` e `status`.
-* **Login**: `id`, `email`, `usuario` e `senha`.
+* **Login**: `id`, `usuario`, `email` e `senha`.
+* **Orcamento**: `cliente`, `servico`, `quantidade`, `caracteristicas`,`valor` e `status`.
 
 ## Regras do Projeto
 
