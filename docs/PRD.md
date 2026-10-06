@@ -133,14 +133,19 @@
 | `descricao` | String | sim | descrição do serviço |
 | `preco` | Double | sim | preço do serviço |
 
-### Entidade Serviço
+### Entidade Orçamento
 
 | Campo | Tipo | Obrigatório | Observação |
 |---|---|---|---|
 | `id` | Long | sim | chave primária, autogerada |
-| `nome` | String | sim | nome do serviço |
-| `descricao` | String | sim | descrição do serviço |
-| `preco` | Double | sim | preço do serviço |
+| `cliente` | String | sim | nome do cliente |
+| `servico` | String | sim | tipo de serviço |
+| `quantidade` | Int | sim | quantidade solicitada |
+| `caracteristicas` | String | sim | caracteristicas do pedido |
+| `valor` | Double | sim | valor do orçamento |
+| `status` | string | sim | status do pedido |
+
+**Operações necessárias:** (x) inserir (x) listar (x) atualizar () excluir
 
 ### Entidade Pedido
 
