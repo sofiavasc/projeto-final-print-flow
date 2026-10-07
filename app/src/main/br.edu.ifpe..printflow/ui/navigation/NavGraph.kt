@@ -1,34 +1,69 @@
 package br.edu.ifpe.printflow.ui.navigation
 
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
+import br.edu.ifpe.printflow.ui.screens.budget.NewBudgetScreen
+import br.edu.ifpe.printflow.ui.screens.details.DetailsScreen
+import br.edu.ifpe.printflow.ui.screens.home.HomeScreen
+import br.edu.ifpe.printflow.ui.screens.login.LoginScreen
 
 @Composable
 fun NavGraph() {
     val navController = rememberNavController()
+
     NavHost(
         navController = navController,
-        startDestination = NavTarget.Home.route
+        startDestination = NavTarget.Login.route
     ) {
+        composable(NavTarget.Login.route) {
+            LoginScreen(
+                onLoginSuccess = {
+                    navController.navigate(NavTarget.Home.route) {
+                        popUpTo(NavTarget.Login.route) { inclusive = true }
+                    }
+                }
+            )
+        }
+
         composable(NavTarget.Home.route) {
-            HomeScreen()
+            HomeScreen(
+                onAddBudgetClick = {
+                    navController.navigate(NavTarget.NewBudget.route)
+                },
+                onBudgetClick = { budget ->
+                    navController.navigate(NavTarget.Details.createRoute(budget.id))
+                }
+            )
+        }
+
+        composable(NavTarget.NewBudget.route) {
+            NewBudgetScreen(
+                onBackClick = {
+                    navController.popBackStack()
+                },
+                onCalculateClick = {
+                    // Por enquanto volta para a Home após "salvar" (simulação)
+                    navController.popBackStack()
+                }
+            )
+        }
+
+        composable(
+            route = NavTarget.Details.route,
+            arguments = listOf(navArgument("budgetId") { type = NavType.StringType })
+        ) { backStackEntry ->
+            val budgetId = backStackEntry.arguments?.getString("budgetId")
+            DetailsScreen(
+                budgetId = budgetId,
+                onBackClick = {
+                    navController.popBackStack()
+                }
+            )
         }
     }
 }
 
-@Composable
-fun HomeScreen() {
-    Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
-    ) {
-        Text(text = "Print-Flow")
-    }
-}
