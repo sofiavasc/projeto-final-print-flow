@@ -36,7 +36,7 @@
 
 ## Login
 
-* O usuário deve informar **usuário e senha**.
+* O usuário deve informar **usuário, email e senha**.
 * O login deve ser verificado antes de acessar as telas principais.
 * A senha não deve ficar visível durante a digitação.
 * Se os dados estiverem incorretos, mostrar uma mensagem de erro sem fechar o aplicativo.
