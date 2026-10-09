@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Print-Flow</string>
+    <string name="login_title">Acesso ao Sistema</string>
+    <string name="user_label">Usuário / Email</string>
+    <string name="password_label">Senha</string>
+    <string name="login_button">Entrar</string>
+    <string name="home_title">Print-Flow</string>
+    <string name="search_hint">Buscar orçamentos ou pedidos...</string>
+    <string name="new_budget_fab">Novo Orçamento</string>
+    <string name="budget_details_title">Detalhes do Orçamento</string>
+    <string name="order_details_title">Detalhes do Pedido</string>
+    <string name="client_name_label">Nome do Cliente</string>
+    <string name="client_phone_label">Telefone</string>
+    <string name="client_email_label">E-mail</string>
+    <string name="service_label">Serviço</string>
+    <string name="quantity_label">Quantidade</string>
+    <string name="characteristics_label">Características</string>
+    <string name="calculate_save_button">Calcular e Salvar</string>
+    <string name="send_whatsapp_button">Enviar pelo WhatsApp</string>
+    <string name="approve_button">Aprovar Orçamento</string>
+    <string name="update_status_button">Atualizar Status</string>
+    <string name="empty_list_message">Nenhum orçamento cadastrado ainda.</string>
+    <string name="error_connectivity">Sem conexão. Verifique a internet e tente novamente.</string>
+    <string name="error_whatsapp">Não foi possível abrir o WhatsApp. Tente novamente.</string>
+    <string name="error_fields_required">Preencha todos os campos obrigatórios.</string>
+    <string name="error_db">Não foi possível realizar esta operação. Tente novamente.</string>
+</resources>
