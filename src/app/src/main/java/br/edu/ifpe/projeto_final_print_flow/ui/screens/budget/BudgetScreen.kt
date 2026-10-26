@@ -9,11 +9,14 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import br.edu.ifpe.projeto_final_print_flow.R
 import br.edu.ifpe.projeto_final_print_flow.ui.components.PrintFlowButton
 import br.edu.ifpe.projeto_final_print_flow.ui.components.PrintFlowTextField
+import br.edu.ifpe.projeto_final_print_flow.data.repository.PrintFlowRepository
+import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -21,12 +24,17 @@ fun BudgetScreen(
     onBackClick: () -> Unit,
     onSaveClick: () -> Unit
 ) {
+    val context = LocalContext.current
+    val repository = remember { PrintFlowRepository(context) }
+    val scope = rememberCoroutineScope()
     var cliente by remember { mutableStateOf("") }
     var telefone by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
     var servico by remember { mutableStateOf("") }
+    var precoUnitario by remember { mutableStateOf("") }
     var quantidade by remember { mutableStateOf("") }
     var caracteristicas by remember { mutableStateOf("") }
+    var errorMessage by remember { mutableStateOf<String?>(null) }
 
     Scaffold(
         topBar = {
@@ -78,6 +86,11 @@ fun BudgetScreen(
                 label = stringResource(id = R.string.service_label)
             )
             PrintFlowTextField(
+                value = precoUnitario,
+                onValueChange = { precoUnitario = it },
+                label = stringResource(id = R.string.unit_price_label)
+            )
+            PrintFlowTextField(
                 value = quantidade,
                 onValueChange = { quantidade = it },
                 label = stringResource(id = R.string.quantity_label)
@@ -89,11 +102,38 @@ fun BudgetScreen(
                 modifier = Modifier.height(120.dp)
             )
 
+            errorMessage?.let {
+                Spacer(modifier = Modifier.height(8.dp))
+                Text(text = it, color = MaterialTheme.colorScheme.error)
+            }
             Spacer(modifier = Modifier.height(24.dp))
 
             PrintFlowButton(
                 text = stringResource(id = R.string.calculate_save_button),
-                onClick = onSaveClick
+                onClick = {
+                    val quantidadeInt = quantidade.toIntOrNull()
+                    val preco = precoUnitario.replace(',', '.').toDoubleOrNull()
+                    if (cliente.isBlank() || telefone.isBlank() || email.isBlank() ||
+                        servico.isBlank() || quantidadeInt == null || quantidadeInt <= 0 ||
+                        preco == null || preco <= 0.0 || caracteristicas.isBlank()
+                    ) {
+                        errorMessage = context.getString(R.string.error_fields_required)
+                    } else {
+                        scope.launch {
+                            val result = repository.salvarOrcamento(
+                                clienteNome = cliente,
+                                telefone = telefone,
+                                email = email,
+                                nomeServico = servico,
+                                quantidade = quantidadeInt,
+                                caracteristicas = caracteristicas,
+                                precoUnitario = preco
+                            )
+                            if (result.isSuccess) onSaveClick()
+                            else errorMessage = context.getString(R.string.error_db)
+                        }
+                    }
+                }
             )
         }
     }
