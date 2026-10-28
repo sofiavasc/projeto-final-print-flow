@@ -38,6 +38,7 @@ fun PrintFlowTextField(
     label: String,
     modifier: Modifier = Modifier,
     visualTransformation: androidx.compose.ui.text.input.VisualTransformation = androidx.compose.ui.text.input.VisualTransformation.None,
+    keyboardOptions: androidx.compose.foundation.text.KeyboardOptions = androidx.compose.foundation.text.KeyboardOptions.Default,
     trailingIcon: @Composable (() -> Unit)? = null
 ) {
     OutlinedTextField(
@@ -49,6 +50,7 @@ fun PrintFlowTextField(
             .padding(vertical = 4.dp),
         shape = RoundedCornerShape(8.dp),
         visualTransformation = visualTransformation,
+        keyboardOptions = keyboardOptions,
         trailingIcon = trailingIcon
     )
 }

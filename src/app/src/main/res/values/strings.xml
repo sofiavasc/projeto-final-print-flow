@@ -1,9 +1,18 @@
 <resources>
     <string name="app_name">Print-Flow</string>
     <string name="login_title">Acesso ao Sistema</string>
-    <string name="user_label">Usuário / Email</string>
+    <string name="user_label">Usuário</string>
     <string name="password_label">Senha</string>
+    <string name="login_email_label">E-mail</string>
     <string name="login_button">Entrar</string>
+    <string name="error_login_invalid">Usuário, e-mail ou senha inválidos.</string>
+    <string name="register_title">Cadastrar Novo Login</string>
+    <string name="register_button">Cadastrar Login</string>
+    <string name="switch_to_register">Não tem conta? Cadastre um novo login</string>
+    <string name="switch_to_login">Já tem conta? Faça login</string>
+    <string name="success_register">Login cadastrado com sucesso! Faça login para continuar.</string>
+    <string name="error_user_exists">Usuário ou e-mail já cadastrado.</string>
+    <string name="error_save">Não foi possível salvar os dados.</string>
     <string name="home_title">Print-Flow</string>
     <string name="search_hint">Buscar orçamentos ou pedidos...</string>
     <string name="new_budget_fab">Novo Orçamento</string>
@@ -13,6 +22,7 @@
     <string name="client_phone_label">Telefone</string>
     <string name="client_email_label">E-mail</string>
     <string name="service_label">Serviço</string>
+    <string name="unit_price_label">Preço unitário</string>
     <string name="quantity_label">Quantidade</string>
     <string name="characteristics_label">Características</string>
     <string name="calculate_save_button">Calcular e Salvar</string>
@@ -22,6 +32,8 @@
     <string name="empty_list_message">Nenhum orçamento cadastrado ainda.</string>
     <string name="error_connectivity">Sem conexão. Verifique a internet e tente novamente.</string>
     <string name="error_whatsapp">Não foi possível abrir o WhatsApp. Tente novamente.</string>
-    <string name="error_fields_required">Preencha todos os campos obrigatórios.</string>
+    <string name="error_fields_required">Preencha os campos obrigatórios (Cliente, Telefone e Serviço).</string>
+    <string name="error_invalid_quantity">Informe uma quantidade válida maior que zero.</string>
+    <string name="error_invalid_price">Informe um preço unitário válido maior que zero.</string>
     <string name="error_db">Não foi possível realizar esta operação. Tente novamente.</string>
 </resources>

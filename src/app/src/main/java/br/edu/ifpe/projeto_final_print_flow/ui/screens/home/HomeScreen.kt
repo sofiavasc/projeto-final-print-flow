@@ -1,3 +1,4 @@
+// Limite da tela: listar e buscar orcamentos persistidos.
 package br.edu.ifpe.projeto_final_print_flow.ui.screens.home
 
 import androidx.compose.foundation.clickable
@@ -12,11 +13,13 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import br.edu.ifpe.projeto_final_print_flow.R
 import br.edu.ifpe.projeto_final_print_flow.data.Orcamento
+import br.edu.ifpe.projeto_final_print_flow.data.repository.PrintFlowRepository
 import br.edu.ifpe.projeto_final_print_flow.ui.components.StatusBadge
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -25,15 +28,9 @@ fun HomeScreen(
     onAddClick: () -> Unit,
     onItemClick: (Long) -> Unit
 ) {
-    // Mock Data
-    val mockOrcamentos = remember {
-        listOf(
-            Orcamento(1, "João Silva", "Impressão A4", 100, "Papel Couché 150g", 50.0, "Pendente"),
-            Orcamento(2, "Maria Oliveira", "Cartão de Visita", 500, "Verniz Localizado", 120.0, "Aprovado"),
-            Orcamento(3, "Loja XPTO", "Banner", 1, "2x1m com Ilhós", 85.0, "Finalizado")
-        )
-    }
-
+    val context = LocalContext.current
+    val repository = remember { PrintFlowRepository(context) }
+    val orcamentos by repository.observarOrcamentos().collectAsState(initial = emptyList())
     var searchQuery by remember { mutableStateOf("") }
 
     Scaffold(
@@ -73,7 +70,12 @@ fun HomeScreen(
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            if (mockOrcamentos.isEmpty()) {
+            val resultados = orcamentos.filter {
+                searchQuery.isBlank() ||
+                    it.cliente.contains(searchQuery, ignoreCase = true) ||
+                    it.servico.contains(searchQuery, ignoreCase = true)
+            }
+            if (resultados.isEmpty()) {
                 Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                     Text(text = stringResource(id = R.string.empty_list_message))
                 }
@@ -81,10 +83,7 @@ fun HomeScreen(
                 LazyColumn(
                     verticalArrangement = Arrangement.spacedBy(8.dp)
                 ) {
-                    items(mockOrcamentos.filter { 
-                        it.cliente.contains(searchQuery, ignoreCase = true) || 
-                        it.servico.contains(searchQuery, ignoreCase = true) 
-                    }) { orcamento ->
+                    items(resultados) { orcamento ->
                         BudgetCard(orcamento = orcamento, onClick = { onItemClick(orcamento.id) })
                     }
                 }
