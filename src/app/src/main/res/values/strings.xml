@@ -36,4 +36,7 @@
     <string name="error_invalid_quantity">Informe uma quantidade válida maior que zero.</string>
     <string name="error_invalid_price">Informe um preço unitário válido maior que zero.</string>
     <string name="error_db">Não foi possível realizar esta operação. Tente novamente.</string>
+    <string name="home_loading_message">Carregando orçamentos...</string>
+    <string name="home_empty_state_message">Nenhum orçamento cadastrado ainda.</string>
+    <string name="home_retry_button">Tentar novamente</string>
 </resources>
