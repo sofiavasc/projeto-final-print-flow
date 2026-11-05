@@ -17,20 +17,30 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.viewmodel.compose.viewModel
 import br.edu.ifpe.projeto_final_print_flow.R
 import br.edu.ifpe.projeto_final_print_flow.data.Orcamento
 import br.edu.ifpe.projeto_final_print_flow.data.repository.PrintFlowRepository
+import br.edu.ifpe.projeto_final_print_flow.ui.UiState
 import br.edu.ifpe.projeto_final_print_flow.ui.components.StatusBadge
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(
     onAddClick: () -> Unit,
-    onItemClick: (Long) -> Unit
+    onItemClick: (Long) -> Unit,
+    viewModel: HomeViewModel = viewModel(
+        factory = object : ViewModelProvider.Factory {
+            override fun <T : ViewModel> create(modelClass: Class<T>): T {
+                val context = LocalContext.current
+                return HomeViewModel(PrintFlowRepository(context.applicationContext)) as T
+            }
+        }
+    )
 ) {
-    val context = LocalContext.current
-    val repository = remember { PrintFlowRepository(context) }
-    val orcamentos by repository.observarOrcamentos().collectAsState(initial = emptyList())
+    val uiState by viewModel.uiState.collectAsState(initial = UiState.Carregando)
     var searchQuery by remember { mutableStateOf("") }
 
     Scaffold(
@@ -53,38 +63,73 @@ fun HomeScreen(
             }
         }
     ) { padding ->
-        Column(
+        Box(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(padding)
                 .padding(16.dp)
         ) {
-            OutlinedTextField(
-                value = searchQuery,
-                onValueChange = { searchQuery = it },
-                modifier = Modifier.fillMaxWidth(),
-                placeholder = { Text(stringResource(id = R.string.search_hint)) },
-                leadingIcon = { Icon(Icons.Filled.Search, contentDescription = null) },
-                shape = MaterialTheme.shapes.medium
-            )
-
-            Spacer(modifier = Modifier.height(16.dp))
-
-            val resultados = orcamentos.filter {
-                searchQuery.isBlank() ||
-                    it.cliente.contains(searchQuery, ignoreCase = true) ||
-                    it.servico.contains(searchQuery, ignoreCase = true)
-            }
-            if (resultados.isEmpty()) {
-                Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                    Text(text = stringResource(id = R.string.empty_list_message))
+            when (uiState) {
+                is UiState.Carregando -> {
+                    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                        Text(text = stringResource(id = R.string.home_loading_message))
+                    }
                 }
-            } else {
-                LazyColumn(
-                    verticalArrangement = Arrangement.spacedBy(8.dp)
-                ) {
-                    items(resultados) { orcamento ->
-                        BudgetCard(orcamento = orcamento, onClick = { onItemClick(orcamento.id) })
+
+                is UiState.Vazio -> {
+                    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                        Text(text = stringResource(id = R.string.home_empty_state_message))
+                    }
+                }
+
+                is UiState.Erro -> {
+                    val mensagem = (uiState as UiState.Erro).mensagem
+                    Column(
+                        modifier = Modifier.fillMaxSize(),
+                        verticalArrangement = Arrangement.Center,
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Text(text = mensagem)
+                        Spacer(modifier = Modifier.height(16.dp))
+                        Button(onClick = { viewModel.tentarNovamente() }) {
+                            Text(stringResource(id = R.string.home_retry_button))
+                        }
+                    }
+                }
+
+                is UiState.Sucesso -> {
+                    val orcamentos = (uiState as UiState.Sucesso).orcamentos
+                    val resultados = orcamentos.filter {
+                        searchQuery.isBlank() ||
+                            it.cliente.contains(searchQuery, ignoreCase = true) ||
+                            it.servico.contains(searchQuery, ignoreCase = true)
+                    }
+
+                    Column(modifier = Modifier.fillMaxSize()) {
+                        OutlinedTextField(
+                            value = searchQuery,
+                            onValueChange = { searchQuery = it },
+                            modifier = Modifier.fillMaxWidth(),
+                            placeholder = { Text(stringResource(id = R.string.search_hint)) },
+                            leadingIcon = { Icon(Icons.Filled.Search, contentDescription = null) },
+                            shape = MaterialTheme.shapes.medium
+                        )
+
+                        Spacer(modifier = Modifier.height(16.dp))
+
+                        if (resultados.isEmpty()) {
+                            Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                                Text(text = stringResource(id = R.string.home_empty_state_message))
+                            }
+                        } else {
+                            LazyColumn(
+                                verticalArrangement = Arrangement.spacedBy(8.dp)
+                            ) {
+                                items(resultados) { orcamento ->
+                                    BudgetCard(orcamento = orcamento, onClick = { onItemClick(orcamento.id) })
+                                }
+                            }
+                        }
                     }
                 }
             }
