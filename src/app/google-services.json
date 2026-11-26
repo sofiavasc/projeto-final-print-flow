@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "647099162349",
+    "project_id": "print-flow-7aa3e",
+    "storage_bucket": "print-flow-7aa3e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:647099162349:android:ac3c7f36c7f9de4f9bb6e4",
+        "android_client_info": {
+          "package_name": "br.edu.ifpe.projeto_final_print_flow"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBavkRJilv-FN5C5kSF9tEzGaE0HtMJvv8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
